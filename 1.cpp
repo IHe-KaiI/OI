@@ -4,8 +4,8 @@
 #define mo 998244353
 using namespace std;
 const int N=10000010;
-int L,R,n,f[N],Min[N],prime[N],num[N],Q[N];
-ll K,sum[N];
+int L,R,n,Min[N],prime[N],num[N],Q[N];
+ll K,f[N],sum[N];
 bool flag[N];
 ll mi(ll x,int y)
 {
@@ -26,7 +26,7 @@ ll calc(int x,int y)
 int main()
 {
 	scanf("%d%d%d%lld",&L,&R,&n,&K);
-	f[1]=1;
+	f[1]=1;sum[1]=1;
 	int cnt=0;
 	for (int i=2;i<=R;i++)
 	{
@@ -45,7 +45,7 @@ int main()
 			flag[k]=1;
 			if (i%prime[j])
 			{
-				f[k]=f[i]*f[prime[j]];
+				f[k]=f[i]*f[prime[j]]%mo;
 				if (Min[i]<prime[j]) Min[k]=Min[i],num[k]=num[i],Q[k]=Q[i];
 					else Min[k]=prime[j],num[k]=1,Q[k]=prime[j];	
 			}
