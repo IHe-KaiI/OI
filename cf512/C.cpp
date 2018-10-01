@@ -69,7 +69,7 @@ int main()
 		}else
 		{
 			int p=erfen(x,y);
-			ll cnt1=query_sum(1,n,1,x,p),cnt2=query_sum(1,n,1,p,y);
+			ll cnt1=query_sum(1,n,1,x,p)%mo,cnt2=query_sum(1,n,1,p,y)%mo;
 			ll s1=((ll)(a[p]-p)*cnt1%mo-query(1,n,1,x,p))%mo;
 			ll s2=(query(1,n,1,p,y)-(ll)(a[p]-p)*cnt2%mo)%mo;
 			printf("%I64d\n",((s1+s2)%mo+mo)%mo);
