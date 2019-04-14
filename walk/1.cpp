@@ -7,7 +7,7 @@
 #define G 3
 #define mo 998244353
 using namespace std;
-const int N=9010,M=5010;
+const int N=30010,M=5010;
 int n,m,tot,Next[M*2],head[M],tree[M*2],f[2][N],fail[N],delta[N],ans[N],K,MOD[N],Len,T[10010];
 vector<int>A,B;
 char s[10010];
